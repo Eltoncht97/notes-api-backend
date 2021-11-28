@@ -1,8 +1,11 @@
-POST http://localhost:3001/api/notes
+POST /api/notes HTTP/1.1
+Host: localhost:3001
 Content-Type: application/json
+Content-Length: 110
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNmI4OWU5ZWMyNzM1Y2JkOTkzZTcxMiIsInVzZXJuYW1lIjoiZWNoYXZlejAxNCIsImlhdCI6MTYzNDUyOTY1NH0.GpAv2YzGkC3vthB4TgzYMF3nbM4OW1X60Krap0pr3bY
 
 {
-  "content": "Una nueva nota",
+  "content": "Una nueva nota con usuario con token 2",
   "important": true
 }
 
@@ -12,3 +15,16 @@ POST http://localhost:3001/api/notes
 Content-Type: application/json
 
 {}
+
+
+###
+POST /api/notes HTTP/1.1
+Host: localhost:3001
+Content-Type: application/json
+Content-Length: 110
+
+{
+  "content": "Una nueva nota con usuario con token",
+  "important": true,
+  "userId": "616b89e9ec2735cbd993e712"
+}
